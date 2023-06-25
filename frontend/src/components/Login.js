@@ -5,10 +5,13 @@ import { Form, Button,  } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const{authUser,setAuthUser,isLoggedIn,setIsLoggedIn}=useAuth()
+
   
 
   const navigate=useNavigate()
@@ -32,8 +35,9 @@ const Login = () => {
       .post("http://localhost:3000/login", {name,email,mob,gender,password})
       .then((response) =>{let mui=response.data
         setData(mui)
+        setAuthUser(response.data.name)
        
-        setAuth(true)
+        setIsLoggedIn(true)
       
        /*  navigate('/') */
         // Reset the form
@@ -63,7 +67,7 @@ const Login = () => {
   return (
     <>
     {
-        !auth?<>
+        !isLoggedIn?<>
         
      <div className="container">
         <h1>Login</h1>

@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 const RegisterForm = () => {
   const navigate=useNavigate()
+  const{authUser,setAuthUser,isLoggedIn,setIsLoggedIn}=useAuth()
 
 
 const[profile_pic,setProfile_pic]=useState()
@@ -28,6 +30,8 @@ const[profile_pic,setProfile_pic]=useState()
       .then((response) => {
         console.log(response.data);
         navigate("/")
+        setIsLoggedIn(true)
+        setAuthUser(response.data.name)
 
         // Reset the form
         
