@@ -61,7 +61,10 @@ app.post('/users', upload.single('profile_pic'), (req, res) => {
     }
 
     console.log('User created:', result);
-    res.status(200).send('User created successfully');
+   /*  res.status(200).send('User created successfully'); */
+    res.status(200).send({
+      name:req.body.name
+    })
 
   });
 });

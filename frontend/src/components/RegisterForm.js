@@ -28,10 +28,12 @@ const[profile_pic,setProfile_pic]=useState()
     axios
       .post("http://localhost:3000/users", {name,email,phone,gender,password,profile_pic})
       .then((response) => {
-        console.log(response.data);
+        let mui=response.data
+        console.log(mui,"mui");
         navigate("/")
         setIsLoggedIn(true)
         setAuthUser(response.data.name)
+        console.log(response.data.name)
 
         // Reset the form
         
@@ -53,7 +55,7 @@ const[profile_pic,setProfile_pic]=useState()
           
           <div className="register-section container text-left">
           <div className="mb-0 ">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Profile pic
               </label>
               <input
@@ -66,7 +68,7 @@ const[profile_pic,setProfile_pic]=useState()
             
             </div>
             <div className="mb-0 ">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 User ID
               </label>
               <input
@@ -78,7 +80,7 @@ const[profile_pic,setProfile_pic]=useState()
               />
             </div>
             <div className="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Name
               </label>
               <input
@@ -90,7 +92,7 @@ const[profile_pic,setProfile_pic]=useState()
               />
             </div>
             <div className="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Email address
               </label>
               <input
@@ -105,7 +107,7 @@ const[profile_pic,setProfile_pic]=useState()
               />
             </div>
             <div className="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Gender
               </label>
               <select class="form-select" 
@@ -117,7 +119,7 @@ const[profile_pic,setProfile_pic]=useState()
               </select>
             </div>
             <div className="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Mob
               </label>
               <input
@@ -129,7 +131,7 @@ const[profile_pic,setProfile_pic]=useState()
               />
             </div>
             <div className="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Password
               </label>
               <input
@@ -143,11 +145,11 @@ const[profile_pic,setProfile_pic]=useState()
 
 
 
-            <div class="mb-0">
-              <label for="exampleFormControlInput1" class="form-label">
+            <div className="mb-0">
+              <label htmlFor="exampleFormControlInput1" class="form-label">
                 Status
               </label>
-              <select class="form-select" aria-label="Default select example">
+              <select className="form-select" aria-label="Default select example">
                 <option selected>Select Status</option>
                 <option value="Male">Pending</option>
                 <option value="Female">Activate</option>
@@ -155,12 +157,12 @@ const[profile_pic,setProfile_pic]=useState()
               </select>
             </div>
 
-             <div class="mb-1">
+             <div className="mb-1">
   <label for="exampleFormControlInput1" class="form-label">Date</label>
-  <input type="Date" class="form-control" id="Date" placeholder="Choose Date..."/>
+  <input type="Date" className="form-control" id="Date" placeholder="Choose Date..."/>
 </div> 
-            <div class="mb-0 mt-2">
-              <button type="submit" class="btn btn-success">
+            <div className="mb-0 mt-2">
+              <button type="submit" className="btn btn-success">
                 Register
               </button>
             </div>

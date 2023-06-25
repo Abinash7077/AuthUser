@@ -54,7 +54,7 @@ const Login = () => {
      
    
   };
-  console.log(data.password,"datat")
+ 
 
  const clickHandler=()=>{
     window.location.reload()
@@ -78,7 +78,7 @@ const Login = () => {
           
             
             <div className="mb-0">
-              <label for="exampleFormControlInput1" classNme="form-label">
+              <label htmlFor="exampleFormControlInput1" classNme="form-label">
                 Email address
               </label>
               <input
@@ -94,7 +94,7 @@ const Login = () => {
            
             
             <div className="mb-0">
-              <label for="exampleFormControlInput1" className="form-label">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 Password
               </label>
               <input
