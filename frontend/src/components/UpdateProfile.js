@@ -25,7 +25,7 @@ const {id}=useParams()
     axios
       .put(`http://localhost:3000/users/`+id, {name,email,mob,gender,password})
       .then((response) => {
-        console.log(response.data);
+       
         // Reset the form
 navigate('/')
         

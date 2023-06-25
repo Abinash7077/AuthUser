@@ -32,7 +32,7 @@ const Login = () => {
       .post("http://localhost:3000/login", {name,email,mob,gender,password})
       .then((response) =>{let mui=response.data
         setData(mui)
-        console.log(mui,"mui")
+       
         setAuth(true)
       
        /*  navigate('/') */
@@ -54,6 +54,9 @@ const Login = () => {
 
  const clickHandler=()=>{
     window.location.reload()
+ }
+ const UserClick=()=>{
+  navigate("/")
  }
 
 
@@ -114,6 +117,7 @@ const Login = () => {
         <p>{data.email}</p>
         <p>{data.status}</p>
         <button className="btn btn-secondary" onClick={clickHandler}>Logout</button>
+        <button className="btn btn-success mx-2" onClick={UserClick}>UserList</button>
        </>
     }
    

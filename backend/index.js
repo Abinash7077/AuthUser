@@ -24,7 +24,7 @@ const connection = mysql.createConnection({
 //multer2
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'users/'); // Specify the folder where the files will be saved
+    cb(null, path.join(__dirname, '/backend/uploads'));
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -62,6 +62,7 @@ app.post('/users', upload.single('profile_pic'), (req, res) => {
 
     console.log('User created:', result);
     res.status(200).send('User created successfully');
+
   });
 });
 // Route to create a new user

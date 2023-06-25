@@ -24,7 +24,7 @@ const[profile_pic,setProfile_pic]=useState()
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/users", {name,email,phone,gender,password})
+      .post("http://localhost:3000/users", {name,email,phone,gender,password,profile_pic})
       .then((response) => {
         console.log(response.data);
         navigate("/")
@@ -54,10 +54,10 @@ const[profile_pic,setProfile_pic]=useState()
               </label>
               <input
                 type="file"
+                name="profile_pic"
                onChange={handleFile}
                 className="form-control"
-                id="UserID"
-                placeholder="Upload Image"
+                 placeholder="Upload Image"
               />
             
             </div>

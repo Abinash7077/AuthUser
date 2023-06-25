@@ -21,7 +21,7 @@ const ForgotPassword = () => {
         password,
       })
       .then((response) => {
-        console.log(response.data,"amb");
+        
         // Reset the form
         navigate("/");
       })

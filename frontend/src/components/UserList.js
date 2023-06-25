@@ -21,6 +21,9 @@ const UserList = () => {
 
   const fetchUsers = () => {
     axios.get('http://localhost:3000/users', {
+      params: {
+        search: search
+      }
       
     })
       .then((response) => {
@@ -89,7 +92,9 @@ const handleDelete=(e)=>{
           </tr>
         </thead>
         <tbody>
-          {users
+          {users.filter((user)=>{
+            return search.toLowerCase()===''?user:user.name.toLowerCase().includes(search)
+          })
           .map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
